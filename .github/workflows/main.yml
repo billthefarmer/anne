@@ -1,0 +1,19 @@
+# Build on push and PR events
+on:
+  push:
+    branches:
+      - main
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+  steps:
+  - uses: actions/checkout@v3
+  - uses: subosito/flutter-action@v2
+    with:
+      flutter-version: '3.7.7'
+  - run: flutter pub get
+  - run: flutter build apk
