@@ -13,7 +13,9 @@ class AnneApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Anne',
-      theme: ThemeData.dark(useMaterial3: true,),
+      theme: ThemeData.dark(
+        useMaterial3: true,
+      ),
       home: const Anne(title: 'Anne of Green Gables'),
     );
   }
